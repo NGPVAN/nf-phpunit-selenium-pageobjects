@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit>
+<phpunit bootstrap="Tests/bootstrap.php">
   <php>
     <const name="PHPUNIT_TESTSUITE" value="true"/>
     <const name="PHPUNIT_TESTSUITE_EXTENSION_SELENIUM_HOST" value="127.0.0.1"/>

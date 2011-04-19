@@ -1,7 +1,8 @@
 <?php
 
-abstract class PHPUnit_SeleniumPageObject_Model extends NF_Selenium_SeleniumPageObject
+abstract class PHPUnit_Extensions_SeleniumPageObject_Model extends PHPUnit_Extensions_SeleniumPageObject
 {
+
     /**
      * An array of mappings that do not directly translate to the model with
      * getter and setters. These should be implemented manually in setFromModel
@@ -27,7 +28,8 @@ abstract class PHPUnit_SeleniumPageObject_Model extends NF_Selenium_SeleniumPage
     {
         foreach ($this->map as $field => $locator) {
             if (!in_array($field, $this->modelSkip)) {
-                self::setByField($this, $field, self::getByField($object, $field));
+                $value = self::getByField($object, $field);
+                self::setByField($this, $field, $value);
             }
         }
 
@@ -62,7 +64,7 @@ abstract class PHPUnit_SeleniumPageObject_Model extends NF_Selenium_SeleniumPage
                     $expect = (string) $expect;
                 }
 
-                $this->se->assertEquals($expect, $value. $message . ' (' . $field . ')');
+                $this->se->assertEquals($expect, $value, $message . ' (' . $field . ')');
             }
         }
     }
