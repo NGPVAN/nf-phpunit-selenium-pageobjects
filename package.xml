@@ -7,7 +7,7 @@
                       http://pear.php.net/dtd/tasks-1.0.xsd
                       http://pear.php.net/dtd/package-2.0
                       http://pear.php.net/dtd/package-2.0.xsd">
-    <name>PHPUnit_SeleniumPageObjects</name>
+    <name>PHPUnit_SeleniumPageObject</name>
     <channel>nationalfield.github.com</channel>
     <summary>Simple PageObject Constructs for Functional testing</summary>
     <description>Library that allows for easier implementation of Selenium PageObjects in PHPUnit.</description>
