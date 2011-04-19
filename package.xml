@@ -27,7 +27,7 @@
         <api>alpha</api>
     </stability>
     <license>BSD License</license>
-    <notes></notes>
+    <notes>Initial release.</notes>
     <contents>
         <dir name="/">
             <dir name="PHPUnit">
