@@ -3,12 +3,18 @@
 class HomePage extends PHPUnit_Extensions_SeleniumPageObject_Model
 {
     protected $map = array(
+        'header' => '//h1[@id="title"]',
         'real_name' => '//input[@id="your_name"]',
         'gender' => '//select[@id="gender"]',
         'save' => '//input[@id="form_submit"]'
         );
 
-    protected $modelSkip = array('gender', 'save');
+    protected $modelSkip = array('gender', 'save', 'header');
+
+    public function assertPreConditions()
+    {
+        $this->se->assertEquals('Example!', $this->getTextByMap('header'));
+    }
 
     public function setFromModel($object)
     {
