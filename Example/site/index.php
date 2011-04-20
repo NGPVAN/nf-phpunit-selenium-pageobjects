@@ -1,5 +1,5 @@
 <h1 id="title">Example!</h1>
-<form action="/view.php" method="post">
+<form action="view.php" method="post">
     <p>
         <label for="your_name">Your Name:</label>
         <input id="your_name" type="text" name="your_name" value="" />
