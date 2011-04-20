@@ -12,18 +12,39 @@ class SubmitTest extends PHPUnit_Extensions_SeleniumTestCase
         $this->setBrowser('firefox');
     }
 
-    public function testSubmit()
+    /**
+     * @dataProvider dataPeople
+     */
+    public function testSubmit(PersonModel $person)
     {
         $this->open('/');
-
-        $person = new PersonModel();
-        $person->setRealName('Graham Christensen');
-        $person->setGender(PersonModel::G_MALE);
         
         $home = new HomePage($this);
         $home->setFromModel($person);
         $view = $home->save();
 
         $view->assertEqualsModel($person);
+    }
+
+    public function dataPeople()
+    {
+        $r = array();
+
+        $person = new PersonModel();
+        $person->setRealName('Graham Christensen');
+        $person->setGender(PersonModel::G_MALE);
+        $r[] = array($person);
+
+        $person = new PersonModel();
+        $person->setRealName('Esley Svanas');
+        $person->setGender(PersonModel::G_FEMALE);
+        $r[] = array($person);
+
+        $person = new PersonModel();
+        $person->setRealName('Nina Arsenault');
+        $person->setGender(PersonModel::G_OTHER);
+        $r[] = array($person);
+
+        return $r;
     }
 }
