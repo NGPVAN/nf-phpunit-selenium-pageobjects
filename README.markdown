@@ -90,6 +90,7 @@ To indicate to the assert/setFromModel methods that these need to skip, place it
 For example:
 
 ```php
+<?php
 protected $map = array(
     'first_name' => 'css=#first_name',
     'last_name' => 'css=#last_name',
