@@ -52,6 +52,7 @@ $this->assertEquals($object->getEmail(), $this->getValueByMap('email'));
 > Asserting the page's content matches the model
 
 To ease the process and allow development to be much faster, the class provides two methods:
+
 - setFromModel($model);
 - assertEqualsModel($model, $message = '');
 
@@ -87,6 +88,7 @@ Some of your $map locators aren't valid places to enter data, and even worse to 
 To indicate to the assert/setFromModel methods that these need to skip, place its $map key into the $modelSkip array.
 
 For example:
+
 ```php
 protected $map = array(
     'first_name' => 'css=#first_name',
