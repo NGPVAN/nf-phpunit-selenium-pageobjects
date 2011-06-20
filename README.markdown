@@ -15,6 +15,7 @@ You can (and should) read all about PageObjects here: http://code.google.com/p/s
 To remove hard-coded Selenium locators, a `protected $map` variable is defined on every PageObject. Define your map of elements that you reference here:
 
 ```php
+<?php
 protected $map = array(
     'first_name' = 'css=#account_fname',
     'last_name' = 'css=$account_lname',
@@ -30,6 +31,7 @@ When you instantiate a PageObject, it calls `assertMapConditions` which automati
 To use a mapped element, simply append `ByMap` to the end of the method name you want to utilize. For example:
 
 ```php
+<?php
 $this->typeByMap('first_name', 'Graham');
 $this->typeByMap('last_name', 'Christensen');
 ```
@@ -40,14 +42,18 @@ Often, a form on a page directly represents a model class with standard getter a
 Writing aggregate getters and setters for each object would be a tedious:
 
 ```php
+<?php
 $this->setName($object->getName());
 $this->setEmail($object->getEmail());
 ```
 > Setting Fields
 
 ```php
-$this->assertEquals($object->getName(), $this->getValueByMap('name'));
-$this->assertEquals($object->getEmail(), $this->getValueByMap('email'));
+<?php
+$this->assertEquals($object->getName(),
+    $this->getValueByMap('name'));
+$this->assertEquals($object->getEmail(),
+    $this->getValueByMap('email'));
 ```
 > Asserting the page's content matches the model
 
@@ -64,6 +70,7 @@ This method takes the camel-case version of the map, and uses the Pageobject's s
 For example, if you have the fields 	`first_name` and `last_name` in your map, `setFromModel` would effectively be:
 
 ```php
+<?php
 $this->setFirstName($model->getFirstName());
 $this->setLastName($model->getLastName());
 ```
@@ -74,6 +81,7 @@ This method is very similar to setFromModel, however asserts the content on the 
 For example, if you have the fields 	`first_name` and `last_name` in your map, `assertFromModel` would effectively be:
 
 ```php
+<?php
 $this->assertEquals($model->getFirstName(),
     $this->getFirstName(),
     'first_name on the page should match the model.');
