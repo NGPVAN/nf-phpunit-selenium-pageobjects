@@ -17,9 +17,9 @@
         <email>gchristensen@nationalfield.org</email>
         <active>yes</active>
     </lead>
-    <date>2011-04-19</date>
+    <date>2011-07-20</date>
     <version>
-        <release>0.0.2</release>
+        <release>0.0.3</release>
         <api>0.0.2</api>
     </version>
     <stability>

@@ -28,8 +28,8 @@ abstract class PHPUnit_Extensions_SeleniumPageObject
     {
         $this->se = $test;
 
-        $this->assertMapConditions();
         $this->assertPreConditions();
+        $this->assertMapConditions();
     }
 
     /**
