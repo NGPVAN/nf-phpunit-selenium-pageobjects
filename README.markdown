@@ -3,6 +3,8 @@ PageObjects is the idea of representing a webpage's services through a model, ab
 
 You can (and should) read all about PageObjects here: http://code.google.com/p/selenium/wiki/PageObjects
 
+Additionally, this repository comes prepared with an example application and functional test: https://github.com/nationalfield/phpunit-selenium-pageobjects/tree/master/Example
+
 ## Why
 **You should apply good programming practices to testing. Tests are code. Bad code can contribute considerably to your technical debt. Tests should be DRY.**
 
@@ -11,6 +13,9 @@ You can (and should) read all about PageObjects here: http://code.google.com/p/s
 2. `pear install nf/PHPUnit_SeleniumPageObject`
 
 # Behavior
+## Getters and Setters
+You should define a getter and setter for each field for usage outside of your functional test. Never manually access the map, locators, or map keys outside of the PageObject.
+
 ## Map
 To remove hard-coded Selenium locators, a `protected $map` variable is defined on every PageObject. Define your map of elements that you reference here:
 
